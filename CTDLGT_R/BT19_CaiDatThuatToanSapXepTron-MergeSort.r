@@ -22,6 +22,5 @@ mmergesort<-function(A) {
     A
   }
 }
-x<- sample(1:100)
-
+x<-c(18, 16, 8, 7, 6, 3, 11, 9, 15, 1)
 mmergesort(x)

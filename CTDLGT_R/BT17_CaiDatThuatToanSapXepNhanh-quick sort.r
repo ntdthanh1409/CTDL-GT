@@ -1,24 +1,14 @@
 # quick sort 
-quickSort <- function(arr) {
-  mid <- sample(arr, 1)
-  left <- c()
-  right <- c()
-  lapply(arr[arr != mid], function(d) {
-    if (d < mid) {
-      left <<- c(left, d)
-    }
-    else {
-      right <<- c(right, d)
-    }
-  })
+
+quick_sort<-function(x){
   
-  if (length(left) > 1) {
-    left <- quickSort(left)
-  }
-  
-  if (length(right) > 1) {
-    right <- quickSort(right)
-  }
-  c(left, mid, right)
+  if(length(x)<=1) return(x)
+  pivot<-x[1]
+  rest<-x[-1]
+  pivot_less<-quick_sort(rest[rest<pivot])
+  pivot_greater<-quick_sort(rest[rest>=pivot])
+  return(c(pivot_less,pivot,pivot_greater))
 }
+
+dulieu  = c ( 32 , 17 , 49 , 98 , 06 , 25 , 53 , 61 )
 quickSort(dulieu)
